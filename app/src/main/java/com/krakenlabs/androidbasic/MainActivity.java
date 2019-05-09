@@ -16,7 +16,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         controller = new Controller(getApplicationContext());
+        controller.login("h53@h.com","0987654321");
         controller.search();
+
     }
 }

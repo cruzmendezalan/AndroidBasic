@@ -13,4 +13,9 @@ public class RequestLogin extends AbstractRequest {
 
     @SerializedName("password")
     private String password;
+
+    public RequestLogin(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
 }
