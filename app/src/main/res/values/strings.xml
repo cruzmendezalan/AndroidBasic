@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AndroidBasic</string>
+    <string name="label_abrir_meenu">Abrir menú</string>
+    <string name="label_cerrar_menu">Cerrar menú</string>
+    <string name="label_text_default">etiqueta para password</string>
+    <string name="crear_cuenta">Crear cuenta</string>
 </resources>

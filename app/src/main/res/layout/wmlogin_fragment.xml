@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="model"
+            type="com.krakenlabs.androidbasic.ui.login.LoginModel" />
+        <variable
+            name="viewmodel"
+            type="com.krakenlabs.androidbasic.ui.login.WMLoginViewModel" />
+        <variable
+            name="fragment"
+            type="com.krakenlabs.androidbasic.ui.login.WMLoginFragment" />
+
+        <import type="com.krakenlabs.androidbasic.ui.binding.BaseBindings.Rule" />
+        <import type="android.view.View" />
+    </data>
+
+    <RelativeLayout
+        android:id           ="@+id/rl_wmlogin"
+        android:layout_width ="match_parent"
+        android:orientation  ="vertical"
+        android:layout_height="match_parent"
+        android:clickable    ="true"
+        android:focusable    ="true"
+        android:paddingStart ="30dp"
+        android:paddingEnd   ="30dp"
+        android:background   ="@color/white_bg"
+        >
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id               ="@+id/til_email"
+            android:layout_marginTop ="30dp"
+            android:layout_width     ="match_parent"
+            android:layout_height    ="wrap_content"
+            app:validation           ="@{Rule.EMAIL_RULE}"
+            app:errorMsg             ='@{"Email no valido"}'
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id           ="@+id/tie_email"
+                android:layout_width ="match_parent"
+                android:layout_height="wrap_content"
+                android:hint         ="Correo electronico"
+                android:text         ="@{model.email}"
+                android:enabled      ="@{!model.busy}"
+                android:inputType    ="textEmailAddress"
+                android:afterTextChanged="@{(editable) -> viewmodel.emailTextChanged(editable, model)}"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_below    ="@+id/til_email"
+            android:id              ="@+id/til_password"
+            android:layout_marginTop="20dp"
+            android:layout_width    ="match_parent"
+            android:layout_height   ="wrap_content"
+            app:validation           ="@{Rule.PASSWORD_RULE}"
+            app:errorMsg             ='@{"Contraseña invalida"}'
+            app:passwordToggleEnabled="true"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id            ="@+id/tie_password"
+                android:layout_width  ="match_parent"
+                android:layout_height ="wrap_content"
+                android:hint          ="Contraseña"
+                android:inputType     ="textPassword"
+                android:enabled       ="@{!model.busy}"
+                android:text          ="@{model.password}"
+                android:backgroundTint="@color/transparent"
+                android:afterTextChanged="@{(editable) -> viewmodel.passwordTextChanged(editable, model)}"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ProgressBar
+            android:id="@+id/pb_loading"
+            android:layout_marginTop ="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below     ="@+id/til_password"
+            android:layout_width     ="wrap_content"
+            android:layout_height    ="wrap_content"
+            android:visibility       ="@{model.busy ? View.VISIBLE : View.GONE}"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_below     ="@+id/til_password"
+            android:id               ="@+id/btn_login"
+            android:layout_height    ="60dp"
+            android:layout_width     ="match_parent"
+            android:layout_marginTop="20dp"
+            android:textColor        ="@color/primaryTextColor"
+            android:text             ="Iniciar sesion"
+            android:textSize         ="16sp"
+            android:textAllCaps      ="false"
+            android:onClick          ="@{(view) -> fragment.click(view)}"
+            android:visibility       ="@{model.busy ? View.GONE : View.VISIBLE}"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_height    ="60dp"
+            android:layout_below     ="@+id/btn_login"
+            android:layout_width     ="match_parent"
+            android:layout_marginTop ="10dp"
+            android:text             ="@string/crear_cuenta"
+            android:id               ="@+id/btn_register"
+            android:layout_gravity   ="center_horizontal"
+            android:textSize         ="16sp"
+            android:visibility       ="@{model.busy ? View.GONE : View.VISIBLE}"
+            android:onClick          ="@{(view) -> fragment.click(view)}"
+            android:textAllCaps      ="false"
+            />
+    </RelativeLayout>
+
+</layout>

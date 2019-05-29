@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Mi cuenta">
+        <menu>
+            <group android:checkableBehavior="single" android:enabled="true" android:id="@+id/menu_profile">
+                <item android:id="@+id/nav_perfil"
+                    android:title="Perfil"
+                    />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Ayuda" android:enabled="false">
+        <menu>
+            <group android:checkableBehavior="single" android:enabled="false">
+                <item android:id="@+id/nav_use"  android:title="¿Cómo usar la app?" />
+                <item android:id="@+id/nav_support" android:title="Contáctanos" />
+                <item android:id="@+id/nav_terms" android:title="Términos y condiciones" />
+            </group>
+        </menu>
+    </item>
+</menu>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="model"
+            type="com.krakenlabs.androidbasic.ui.activity.ActivityModel" />
+        <variable
+            name="viewmodel"
+            type="com.krakenlabs.androidbasic.ui.activity.ActivityViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id           ="@+id/ll_nav_header"
+        android:layout_width ="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation  ="vertical"
+        android:padding      ="12dp"
+        android:background="@color/gray_light"
+        >
+
+        <TextView
+            android:layout_marginTop       ="18dp"
+            android:id                     ="@+id/tv_user_email"
+            android:layout_width           ="wrap_content"
+            android:layout_height          ="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:singleLine             ="true"
+            android:layout_centerVertical  ="true"
+            android:text                   ="@{model.labelHeader}"
+            android:layout_gravity         ="center_horizontal"
+            android:textSize               ="18sp" />
+
+        <TextView
+            android:id                     ="@+id/tv_user_password"
+            android:layout_marginTop       ="4dp"
+            android:layout_gravity         ="center_horizontal"
+            android:layout_width           ="wrap_content"
+            android:layout_height          ="wrap_content"
+            android:layout_below           ="@id/tv_user_email"
+            android:inputType              ="textPassword"
+            android:backgroundTint         ="@color/white_bg"
+            android:visibility             ="@{model.sessionActive ? View.VISIBLE : View.GONE}"
+            android:text                   ="@string/label_text_default"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id                      ="@+id/btn_login"
+            android:layout_gravity          ="center_horizontal"
+            android:layout_width            ="wrap_content"
+            android:layout_height           ="36dp"
+            android:paddingTop   ="0dp"
+            android:paddingBottom="0dp"
+            android:paddingStart ="6dp"
+            android:paddingEnd   ="6dp"
+            android:layout_marginTop        ="8dp"
+            android:backgroundTint          ="@{model.sessionActive ? @color/white_bg       : @color/orange_default }"
+            android:textColor               ="@{model.sessionActive ? @color/orange_default : @color/white_bg       }"
+            android:background              ="@{model.sessionActive ? @drawable/wm_btn_gray : @drawable/wm_btn_blue }"
+            android:text                    ="@{model.labelButtonLogin}"
+            android:onClick                 ="@{() -> viewmodel.loginOrLogout()}"
+            android:textSize                ="12sp"
+            android:layout_centerHorizontal ="true"
+            />
+
+    </LinearLayout>
+</layout>

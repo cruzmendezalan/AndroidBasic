@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary"       >#2770c9</color>
+    <color name="colorPrimaryDark"   >#004FA9</color>
+    <color name="colorAccent"        >#fec037</color>
+    <color name="primaryTextColor"   >#FFFFFF</color>
+
+    <color name="blue_dark"          >#01549E</color>
+    <color name="blue_default"       >#016DC3</color>
+    <color name="blue_light"         >#0173CE</color>
+    <color name="blue_clear"         >#017ADB</color>
+
+    <color name="brown_grey"         >#9b9b9b</color>
+
+    <color name="orange_dark"        >#DF5900</color>
+    <color name="orange_default"     >#ff931e</color>
+    <color name="orange_transparant" >#1AFF6600</color>
+    <color name="orange_light"       >#FF8B3D</color>
+
+    <color name="green_grass"        >#54c12d</color>
+    <color name="green_dark"         >#5AB13B</color>
+    <color name="green_default"      >#97b84d</color>
+    <color name="green_light"        >#BEE388</color>
+
+    <color name="yellow_dark"        >#F9BF00</color>
+    <color name="yellow_default"     >#FBCA2A</color>
+    <color name="yellow_light"       >#FBAF17</color>
+    <color name="yellow_co"          >#FDF9E7</color>
+    <color name="yellow_transparent" >#08F9BF00</color>
+
+    <color name="red_light"          >#08FF0C0F</color>
+    <color name="red_default"        >#EB0C0C</color>
+    <color name="red_dark"           >#CA0C0C</color>
+    <color name="red_vermillion"     >#eb0c0c</color>
+
+    <color name="gray_dark"          >#7C7C7C</color>
+    <color name="gray_default"       >#ADADAD</color>
+    <color name="gray_light"         >#EFEFEF</color>
+    <color name="gray_cart"          >#F8F7F7</color>
+    <color name="gray_dark_transp"   >#40484848</color>
+
+    <color name="white_bg"           >#FEFEFE</color>
+    <color name="white_transparent"  >#99FFFFFF</color>
+    <color name="transparent"        >#00000000</color>
+    <color name="chk_review"         >#DDE3F4</color>
+    <color name="bnv_un_selected"    >#004D86</color>
+
+    <color name="bg_alert"           >#99282828</color>
+    <color name="gray_clear_text"    >#929292</color>
+    <color name="bg_menu"            >#4cd2d2d2</color>
+
 </resources>
